@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KnowGrow | Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+  <script src="dashboard.js" defer></script>
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <h2 class="brand">Know<span>Grow</span></h2>
+    <p class="muted">KNOWLEDGE INTELLIGENCE</p>
+    <nav>
+      <a class="active" href="dashboard.html">▦ &nbsp; Dashboard</a>
+      <a href="#employees">♙ &nbsp; Employees</a>
+      <a href="#gaps">◎ &nbsp; Skill Gap Analysis</a>
+      <a href="#analytics">▥ &nbsp; Analytics</a>
+    </nav>
+    <div class="side-bottom">
+      <p>Organizational Learning</p>
+      <small>KnowGrow MVP · v1.0</small>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div>
+        <p class="muted">WORKSPACE / OVERVIEW</p>
+        <h1>Dashboard</h1>
+        <p class="muted">Understand your team's skills. Identify what to improve.</p>
+      </div>
+      <button class="primary" onclick="showEmployeeForm()">+ Add employee</button>
+    </header>
+
+    <section class="metrics">
+      <article class="metric">
+        <p>Total employees</p>
+        <h2 id="totalEmployees">—</h2>
+        <small>Registered team members</small>
+      </article>
+      <article class="metric">
+        <p>Skills tracked</p>
+        <h2 id="totalSkills">6</h2>
+        <small>Illustrative demo metric</small>
+      </article>
+      <article class="metric">
+        <p>Skill gaps identified</p>
+        <h2 id="totalGaps">4</h2>
+        <small>Illustrative demo metric</small>
+      </article>
+      <article class="metric">
+        <p>Development priority</p>
+        <h2 class="priority">High</h2>
+        <small>Based on sample gap data</small>
+      </article>
+    </section>
+
+    <section id="employeeForm" class="panel hidden">
+      <h2>Add employee</h2>
+      <form id="addEmployeeForm" class="employee-form">
+        <input id="employeeName" placeholder="Full name" required>
+        <input id="employeeEmail" type="email" placeholder="Email address" required>
+        <input id="employeeDepartment" placeholder="Department">
+        <input id="employeeRole" placeholder="Job role">
+        <input id="employeeExperience" type="number" min="0"
+               placeholder="Experience (years)">
+        <button class="primary" type="submit">Save employee</button>
+      </form>
+      <p id="formMessage" class="message"></p>
+    </section>
+
+    <section id="employees" class="panel">
+      <div class="panel-heading">
+        <div>
+          <h2>Team members</h2>
+          <p class="muted">Employees loaded from your backend</p>
+        </div>
+        <button class="secondary" id="refreshEmployees">Refresh</button>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+          <tr>
+            <th>Employee</th><th>Department</th>
+            <th>Role</th><th>Experience</th>
+          </tr>
+          </thead>
+          <tbody id="employeeRows">
+          <tr><td colspan="4">Loading employees...</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p id="employeeMessage" class="message"></p>
+    </section>
+
+    <section class="lower-grid">
+      <article class="panel" id="gaps">
+        <h2>Skill gap analysis</h2>
+        <p class="muted">Sample data — replace with assessed skills</p>
+        <div class="gap-item">
+          <div class="gap-label"><span>Java</span><b>40% gap</b></div>
+          <div class="track"><div style="width:40%"></div></div>
+        </div>
+        <div class="gap-item">
+          <div class="gap-label"><span>SQL</span><b>30% gap</b></div>
+          <div class="track"><div style="width:30%"></div></div>
+        </div>
+        <div class="gap-item">
+          <div class="gap-label"><span>Communication</span><b>55% gap</b></div>
+          <div class="track"><div style="width:55%"></div></div>
+        </div>
+        <div class="gap-item">
+          <div class="gap-label"><span>Problem solving</span><b>25% gap</b></div>
+          <div class="track"><div style="width:25%"></div></div>
+        </div>
+      </article>
+
+      <article class="panel" id="analytics">
+        <h2>Recommended actions</h2>
+        <p class="muted">Suggested next steps</p>
+        <div class="recommendation">
+          <span class="recommendation-icon">01</span>
+          <div><b>Assess employee skills</b><p>Record current proficiency levels.</p></div>
+        </div>
+        <div class="recommendation">
+          <span class="recommendation-icon">02</span>
+          <div><b>Define role requirements</b><p>Set the proficiency needed for each role.</p></div>
+        </div>
+        <div class="recommendation">
+          <span class="recommendation-icon">03</span>
+          <div><b>Plan targeted learning</b><p>Prioritize the largest verified skill gaps.</p></div>
+        </div>
+      </article>
+    </section>
+
+    <footer>KnowGrow · Organizational Knowledge Gap Intelligence</footer>
+  </main>
+</div>
+</body>
+</html>

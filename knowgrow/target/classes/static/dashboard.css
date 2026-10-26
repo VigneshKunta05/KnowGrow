@@ -1,0 +1,94 @@
+
+* { box-sizing: border-box; }
+:root {
+    --navy: #172b4d;
+    --teal: #16b8a6;
+    --muted: #77849a;
+    --border: #e6ebf2;
+    --bg: #f5f7fb;
+}
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: var(--navy);
+    background: var(--bg);
+}
+.layout { display: flex; min-height: 100vh; }
+.sidebar {
+    width: 245px; background: #101f39; color: white;
+    padding: 30px 18px; display: flex; flex-direction: column;
+}
+.brand { font-size: 27px; margin: 0 0 8px; }
+.brand span { color: var(--teal); }
+.muted { color: var(--muted); font-size: 13px; }
+.sidebar .muted { font-size: 10px; letter-spacing: 1.5px; }
+nav { margin-top: 35px; }
+nav a {
+    display: block; color: #b9c6d9; text-decoration: none;
+    padding: 14px 12px; border-radius: 9px; margin-bottom: 7px;
+}
+nav a:hover, nav a.active { background: #243954; color: white; }
+.side-bottom { margin-top: auto; padding: 20px 8px 0; color: #c4d0df; }
+.side-bottom small { color: #8495ad; }
+.main { flex: 1; min-width: 0; padding: 32px; }
+.topbar { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 25px; }
+.topbar h1 { font-size: 30px; margin: 8px 0; }
+.topbar p { margin: 6px 0; }
+.primary, .secondary {
+    border: 0; padding: 12px 17px; border-radius: 8px;
+    cursor: pointer; font-weight: 600;
+}
+.primary { background: var(--teal); color: #062c32; }
+.primary:hover { background: #12a995; }
+.secondary { background: #edf2f8; color: var(--navy); }
+.metrics { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 16px; margin-bottom: 22px; }
+.metric, .panel {
+    background: white; border: 1px solid var(--border);
+    border-radius: 13px; padding: 22px;
+}
+.metric p { color: var(--muted); margin: 0; font-size: 13px; }
+.metric h2 { font-size: 30px; margin: 17px 0 8px; }
+.metric small { color: var(--muted); }
+.priority { color: #d97706; }
+.panel { margin-bottom: 22px; }
+.panel h2 { margin: 0 0 8px; font-size: 19px; }
+.panel-heading { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 18px; }
+.panel-heading p { margin: 5px 0; }
+.table-wrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; text-align: left; }
+th, td { padding: 14px 12px; border-bottom: 1px solid var(--border); font-size: 13px; }
+th { color: var(--muted); font-weight: 600; }
+td { overflow-wrap: anywhere; }
+.lower-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.gap-item { margin-top: 25px; }
+.gap-label { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 9px; }
+.gap-label b { color: #64748b; }
+.track { height: 8px; border-radius: 8px; background: #e9eef5; overflow: hidden; }
+.track div { height: 100%; border-radius: 8px; background: var(--teal); }
+.recommendation { display: flex; gap: 13px; margin-top: 24px; align-items: flex-start; }
+.recommendation-icon {
+    background: #e5f8f5; color: #078c80; padding: 9px;
+    border-radius: 8px; font-size: 12px; font-weight: bold;
+}
+.recommendation p { color: var(--muted); font-size: 13px; margin: 6px 0 0; }
+.employee-form { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+.employee-form input { flex: 1 1 180px; min-width: 0; padding: 12px; border: 1px solid var(--border); border-radius: 8px; }
+.hidden { display: none; }
+.message { color: var(--muted); font-size: 13px; }
+footer { text-align: center; padding: 12px; color: var(--muted); font-size: 12px; }
+@media (max-width: 1050px) {
+    .metrics { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .lower-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 650px) {
+    .layout { display: block; }
+    .sidebar { width: 100%; padding: 18px; }
+    nav { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 18px; }
+    nav a { padding: 10px; margin: 0; }
+    .side-bottom { display: none; }
+    .main { padding: 18px; }
+    .topbar { align-items: flex-start; flex-direction: column; }
+    .metrics { gap: 10px; }
+    .metric { padding: 15px; }
+    .metric h2 { font-size: 25px; }
+}
